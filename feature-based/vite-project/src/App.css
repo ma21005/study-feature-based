@@ -35,6 +35,13 @@ form input[type="text"] {
   border-radius: 4px;
 }
 
+form input[type="password"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
 form input[type="submit"] {
   background-color: #646cff;
   color: white;
@@ -104,6 +111,14 @@ li input[type="text"] {
   border-radius: 4px;
 }
 
+li input[type="password"] {
+  flex: 1;
+  margin: 0 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
 li input[type="checkbox"] {
   margin-right: 10px;
 }
@@ -120,4 +135,29 @@ li button {
 
 li button:hover {
   background-color: #535bf2;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-info p {
+  margin: 0;
+}
+
+.user-info button {
+  background-color: #ff6b6b; /* 赤色 */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.user-info button:hover {
+  background-color: #ff4c4c;
 }
