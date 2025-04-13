@@ -1,7 +1,9 @@
 import { useTodos } from '../hooks/useTodos';
+import { useAuth } from '../hooks/useAuth';
+import { FilterSelector } from '../components/FilterSelector';
 import { TodoInput } from '../components/TodoInput';
 import { TodoList } from '../components/TodoList';
-import { FilterSelector } from '../components/FilterSelector';
+import { LoginForm } from '../components/LoginForm';
 
 export const HomePage = () => {
   const {
@@ -18,8 +20,23 @@ export const HomePage = () => {
     handleEmpty,
   } = useTodos();
 
+  const { user, login, logout } = useAuth();
+
+  if (!user) {
+    return (
+      <div>
+        <h2>ログインしてください</h2>
+        <LoginForm onLogin={login} />
+      </div>
+    );
+  }
+
   return (
     <div>
+      <div className="user-info">
+        <p>ようこそ、{user} さん！</p>
+        <button onClick={logout}>ログアウト</button>
+      </div>
       <FilterSelector
         filter={filter}
         todos={todos}
