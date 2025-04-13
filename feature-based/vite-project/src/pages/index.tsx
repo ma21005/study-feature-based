@@ -1,12 +1,23 @@
-import { AuthFeature, useAuth } from '../features/auth';
-import { TodoFeature } from '../features/todos';
+import { LoginForm, useAuth } from '../features/auth';
+import { TodoForm } from '../features/todos';
+import { ThemeToggle } from '../features/theme';
 
 export const HomePage = () => {
   const { user, login, logout } = useAuth();
 
   return user ? (
-    <TodoFeature username={user} onLogout={logout} />
+    <>
+      <div className="user-info">
+        <ThemeToggle />
+        <button className="logout-button" onClick={logout}>ログアウト</button>
+      </div>
+      <p>ようこそ、{user} さん！</p>
+      <TodoForm />
+    </>
   ) : (
-    <AuthFeature onLogin={login} />
+    <>
+      <ThemeToggle />
+      <LoginForm onLogin={login} />
+    </>
   );
 };

@@ -1,14 +1,9 @@
-import { useTodos } from './hooks/useTodos';
-import { FilterSelector } from './components/FilterSelector';
-import { TodoInput } from './components/TodoInput';
-import { TodoList } from './components/TodoList';
+import { useTodos } from '../hooks/useTodos';
+import { FilterSelector } from './FilterSelector';
+import { TodoInput } from './TodoInput';
+import { TodoList } from './TodoList';
 
-type Props = {
-  username: string;
-  onLogout: () => void;
-};
-
-export const TodoFeature = ({ username, onLogout }: Props) => {
+export const TodoForm = () => {
   const {
     text,
     todos,
@@ -25,10 +20,6 @@ export const TodoFeature = ({ username, onLogout }: Props) => {
 
   return (
     <div>
-      <div className="user-info">
-        <p>ようこそ、{username} さん！</p>
-        <button onClick={onLogout}>ログアウト</button>
-      </div>
       <FilterSelector
         filter={filter}
         todos={todos}

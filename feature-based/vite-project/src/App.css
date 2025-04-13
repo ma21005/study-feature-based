@@ -1,8 +1,6 @@
 /* 全体のレイアウト */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
   margin: 0;
   padding: 0;
   display: flex;
@@ -81,10 +79,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-button:hover:not(:disabled) {
-  background-color: #ff4c4c;
-}
-
 /* Todoリスト */
 ul {
   list-style: none;
@@ -148,8 +142,8 @@ li button:hover {
   margin: 0;
 }
 
-.user-info button {
-  background-color: #ff6b6b; /* 赤色 */
+.logout-button {
+  background-color: #ff6b6b;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -158,6 +152,20 @@ li button:hover {
   transition: background-color 0.3s;
 }
 
-.user-info button:hover {
+.logout-button:hover {
   background-color: #ff4c4c;
+}
+
+.theme-toggle-button {
+  background-color: #008b8b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle-button:hover {
+  background-color: #007a7a;
 }
