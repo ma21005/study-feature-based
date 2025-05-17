@@ -20,6 +20,7 @@ export const FilterSelector = ({ filter, todos, onFilterChange, onEmpty }: Props
         <button
           onClick={onEmpty}
           disabled={todos.filter((todo) => todo.removed).length === 0}
+          style={{ marginBottom: '12px' }}
         >
           ごみ箱を空にする
         </button>
